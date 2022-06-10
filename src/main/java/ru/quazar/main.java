@@ -3,12 +3,22 @@ package ru.quazar;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import org.jetbrains.annotations.NotNull;
+import ru.quazar.PomodoroTimer;
+
 class Main {
 
     public static int test=0;
+
     public static void main(String[] args) throws InterruptedException{
 
         String[] cmd = new Scanner(System.in).nextLine().split(" ");
+
+        PomodoroTimer pomodoroTimer = new PomodoroTimer();
+
+    }
+
+    public static void goPomodoro(@NotNull String[] cmd) throws InterruptedException {
 
         int work = 50;
         int breake = 10;
@@ -17,7 +27,7 @@ class Main {
         int help = 0;
         int count = 1;
 
-        for(int i=0; i < cmd.length;i++){
+        for (int i = 0; i < cmd.length; i++) {
             switch (cmd[i]) {
                 case "--help" -> {
                     System.out.println(
@@ -37,13 +47,14 @@ class Main {
                 case "-count" -> count = Integer.parseInt(cmd[++i]);
             }
         }
-        if(help == 0){
+
+        if (help == 0) {
             long startTime = System.currentTimeMillis();
             for (int i = 1; i <= count; i++) {
                 timer(work, breake, sizebreak, sizework);
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("Pomodor таймер истек: " + (endTime-startTime)/(1000 * 60)+ " min");
+            System.out.println("Pomodor таймер истек: " + (endTime - startTime) / (1000 * 60) + " min");
         }
 
     }
@@ -82,4 +93,5 @@ class Main {
         }
         System.out.println();
     }
+
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/jQuery.countdownTimer.css" />
+
+  <title>TaskTracker</title>
+</head>
+<body>
+<main class="container">
+  <h1>Task Tracker</h1>
+  <p>Record the task.</p>
+  <div class="container text-center">
+    <div id="taskMainContainer" class="jumbotron col-md-8 mx-auto">
+      <form id="TaskForm" th:object="${taskForm}">
+        <div class="row">
+          <div class="col display-4"><span id="timerView">50:00</span></div>
+        </div>
+        <div class="row mt-3 justify-content-md-center">
+          <div class="col-md-4 "><button id="startButton" type="button" class="btn btn-block btn-success" disabled>Start</button></div>
+          <div class="col-md-4 "><button id="stopButton" type="button" class="btn btn-block btn-danger" disabled>Stop</button></div>
+        </div>
+        <div class="row mt-3 justify-content-md-center">
+          <div class="col-md-4 p-1"><input th:field="*{category}" type="text" class="form-control" placeholder="category"></div>
+          <div class="col-md-8 p-1"><input th:field="*{taskName}" type="text" class="form-control" placeholder="task"></div>
+          <div><input th:field="*{taskId}" type="text" class="form-control" hidden></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script src="/js/import.js"></script>
+<script src="/js/view-index.js"></script>
+</body>
+
+</html>
