@@ -1,16 +1,18 @@
 package ru.quazar;
 
+import org.jetbrains.annotations.NotNull;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.generics.TelegramBot;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
-import org.jetbrains.annotations.NotNull;
-import ru.quazar.PomodoroTimer;
 
 class Main {
 
     public static int test=0;
 
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException, TelegramApiExceptionException {
 
         String[] cmd = new Scanner(System.in).nextLine().split(" ");
 
@@ -45,6 +47,9 @@ class Main {
                 case "-w" -> work = Integer.parseInt(cmd[++i]);
                 case "-b" -> breake = Integer.parseInt(cmd[++i]);
                 case "-count" -> count = Integer.parseInt(cmd[++i]);
+//                break;
+//                default:
+//                    throw new IllegalStateException("Unexpected value: " + cmd[i]);
             }
         }
 
