@@ -2,10 +2,6 @@
 .gradle
 
 build
-build.gradle
-
-gradle.*
-
 
 # Compiled class file
 *.class

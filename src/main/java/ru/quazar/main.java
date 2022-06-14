@@ -18,7 +18,7 @@ class Main {
 
     }
 
-    public static void goPomodoro(@NotNull String[] cmd) throws InterruptedException {
+    public static void goPomodoro(@NotNull String[] cmd) throws InterruptedException, TelegramApiBotsException {
 
         int work = 50;
         int breake = 10;

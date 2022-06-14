@@ -1,10 +1,12 @@
 package ru.quazar;
 
+import net.miginfocom.swing.MigLayout;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.UIManager.*;
-//import net.miginfocom.; // For MigLayout
+import net.miginfocom.swing.MigLayout; // For MigLayout
 
 public class PomodoroTimer extends JFrame {
 
